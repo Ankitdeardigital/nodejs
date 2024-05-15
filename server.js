@@ -1,23 +1,14 @@
-const os = require ('os')
-const path = require ('path')
-const { add, sub, mul, div } = require('./math') 
+import http from 'http';
+const PORT = 8000;
 
 
 
-console.log(add(10,20));
-console.log(sub(10,20));
-console.log(mul(10,20));
-console.log(div(10,20));
+const server = http.createServer(async (req, res) => {
+  
+    res.end('<h1> hello world </h1>');
+  
+});
 
-
-// console.log("hello");
-// console.log(os.type());
-// console.log(os.homedir());
-// console.log(os.version());
-
-// console.log(__dirname);
-// console.log(__filename);
-
-// console.log( path.dirname(__filename));
-// console.log( path.basename(__filename));
-// console.log( path.extname(__filename));
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
